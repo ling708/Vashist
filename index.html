@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You TUSC 23/24 ❤️</title>
+    <link href="https://fonts.cdnfonts.com/css/ananda-black" rel="stylesheet">
+    
+    <style>
+        /* Previous styles remain the same until .btn-no */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff5ec;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logo {
+            position: relative;
+            width: "80px";
+            height: "80px";
+            Z-index: 1; 
+        }
+
+        .background-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: #fff5ec;
+            animation: float 6s infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #ff6666;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .envelope.open {
+            transform: translateY(0);
+            z-index: 3;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background: #d82a2a;
+            clip-path: polygon(0 50%, 50% 0, 100% 50%, 100% 100%, 0 100%);
+            transform: rotateX(180deg);
+            transition: transform 0.5s ease;
+        }
+
+        .envelope.open .envelope-flap {
+            transform: rotateX(0deg);
+            transform: translate(0px, -90px);
+            z-index: -1;
+        }
+
+        .heart-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #ff69b4;
+            opacity: 2;
+            transition: opacity 0.5s ease;
+        }
+
+        .envelope.open .heart-container {
+            opacity: 0;
+        }
+
+        .letter {
+            position: absolute;
+            width: 280px;
+            height: 250px;
+            background: white;
+            top: 10px;
+            left: 10px;
+            transition: all 0.5s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            transform: translateY(0);
+            opacity: 0;
+            z-index: 2;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+            padding-top: 30%;
+        }
+
+        .envelope.open .letter {
+            transform: translateY(-180px);
+            opacity: 1;
+        }
+
+        .letter h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: #000000;
+        }
+
+        .letter p {
+            margin: 5px 0;
+            line-height: 1.1;
+            font-size:x-small;
+            color: #666;
+            text-align: left;
+        }
+
+        .buttons {
+            position: relative;
+            bottom: -120%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 4;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-yes {
+            background: #bc1823;
+            color: white;
+            position: fixed;
+            left: 0%;
+            width: 130px;
+            /* Fixed width */
+            height: 40px;
+            /* Fixed height */
+        }
+
+        .btn-yes:hover {
+            background: #792408;
+            transform: scale(1.05);
+        }
+
+        .btn-no {
+            background: #bc1823;
+            color: white;
+            position: absolute;
+            transition: all 0.2s ease;
+            top: auto;
+            left: auto;
+            right: 0%;
+            width: 130px;
+            /* Fixed width */
+            height: 40px;
+            /* Fixed height */
+        }
+
+        .hide {
+            display: none;
+        }
+
+        @import url('https://fonts.cdnfonts.com/css/ananda-black');
+
+        .unselectable {
+            position: absolute;
+            font-family: 'Ananda Black', sans-serif;
+            font-family: 'Ananda', sans-serif;
+            z-index: 2;
+            top: 5%;
+        }
+
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="background-hearts" class="background-hearts"></div>
+
+    <div class="container">
+        <div>
+            <img src="tusc_logo_white.png" height="80px" weight="80px" class="logo">
+        </div>
+        <h1 class="unselectable">To: Vashist</h1>
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="letter">
+                <h2>Vashist ⚽</h2>
+                <p>To the most unexpected talk I had during AP Night,</p>
+                <p>Thank you for trusting me with the conversation we shared (it was probably the alcohol) and everything will definitely remain between us. My DMs are always open for any more life updates but I really hope you can let yourself crush, let yourself love and let yourself feel your feelings because the current you is already enough. This is attempt #236823 of me convincing you to go for it, whether it's [redacted 🤭] or that girl from class you told Cloe’ about!!!</p>
+                <p>Waiting to hear the news of “Vashist as Project Manager” (I’m expecting a TUSC x Stanford collab soon); all the best with your goal of becoming a professional athlete and most importantly, wishing you luck in finding out whatever fervent aspiration means.</p>
+                <p>Last thing, please teach me more Creole in the new SLC, I already forgot the phrase you taught me</p>
+                <p>~ Love, Ling</p>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-yes">Open</button>
+                <button class="btn btn-no" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Don't
+                    Open</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const backgroundHearts = document.querySelector('.background-hearts');
+
+        function createHeart() {
+            const heart = document.createElement('img');
+            heart.className = 'heart';
+            heart.src = 'emoji.png' // change for background 
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 50 + 20 + 'px';
+            heart.style.animationDuration = '6s';
+            heart.style.width = '90px';
+            heart.style.height = '50px';
+            heart.style.position = 'absolute';
+            backgroundHearts.appendChild(heart);
+            // setInterval(createHeart, 5000);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+
+            newTop = getRndInteger(-400, 100);
+            newLeft = getRndInteger(-100, 300);
+            console.log(newTop + "->" + newLeft)
+
+            button.style.top = `${newTop}px`;
+            button.style.left = `${newLeft}px`;
+        }
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        const envelope = document.querySelector('.envelope');
+        const yesBtn = document.querySelector('.btn-yes');
+
+        yesBtn.addEventListener('click', () => {
+            envelope.classList.add('open');
+            backgroundHearts.style.opacity = '1';
+
+            // Start creating hearts
+            const heartsInterval = setInterval(createHeart, 200);
+
+            // Hide buttons
+            document.querySelector('.buttons').classList.add('hide');
+
+            // Stop creating hearts after 5 seconds
+            setTimeout(() => {
+                clearInterval(heartsInterval);
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
